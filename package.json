@@ -1,0 +1,44 @@
+{
+  "name": "vue-composition-toolset",
+  "version": "0.1.0",
+  "description": "Handy set of essential Vue Composition Utilities",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -fr lib && rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeafStark/vue-composition-toolset.git"
+  },
+  "keywords": [
+    "vue",
+    "composition-api",
+    "utils"
+  ],
+  "author": "leafstark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeafStark/vue-composition-toolset/issues"
+  },
+  "homepage": "https://github.com/LeafStark/vue-composition-toolset#readme",
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    },
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "vue-demi": "latest"
+  },
+  "devDependencies": {
+    "rollup": "^2.56.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
