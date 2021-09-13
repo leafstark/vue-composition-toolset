@@ -1,8 +1,12 @@
-import { ref, watchEffect, onBeforeUnmount } from "vue-demi"
+import { Ref, ref, watchEffect, onBeforeUnmount } from 'vue-demi'
 
-export function useTimerFn(cb, interval = 1000, immediate = false) {
+export function useTimerFn(
+  cb: () => void,
+  interval: number = 1000,
+  immediate?: boolean
+): { trigger: Ref<boolean> } {
   const trigger = ref(true)
-  let timer = null
+  let timer: any = null
 
   immediate && cb()
 
