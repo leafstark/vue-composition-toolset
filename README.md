@@ -1,4 +1,7 @@
 # vue-composition-toolset
+>Minimalist design
+
+Provide users with the simplest and most direct development experience
 
 ## Install
 
