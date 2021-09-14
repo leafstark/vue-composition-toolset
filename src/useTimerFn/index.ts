@@ -1,4 +1,5 @@
-import { Ref, ref, watchEffect, onBeforeUnmount } from 'vue-demi'
+import { Ref, ref, watchEffect } from 'vue-demi'
+import { tryOnScopeDispose } from 'vue-composition-toolset'
 
 export function useTimerFn(
   cb: () => void,
@@ -20,7 +21,7 @@ export function useTimerFn(
     }
   })
 
-  onBeforeUnmount(() => {
+  tryOnScopeDispose(() => {
     clearInterval(timer)
   })
 
