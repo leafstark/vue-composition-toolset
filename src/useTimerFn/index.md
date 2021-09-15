@@ -20,5 +20,5 @@ export default {
 }
 ```
 ```js
-  useTimerFn(doSomething, 30 * 1000, true) // The function will be executed at once and every 30 seconds
+  useTimerFn(doSomething, 30 * 1000, true) // The function will be executed immediately for once then runs every 30 seconds
 ```
