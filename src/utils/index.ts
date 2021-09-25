@@ -21,7 +21,7 @@ export function useSetup<V>(setup: () => V) {
     setup,
     render() {
       return h('div', [])
-    },
+    }
   })
 
   return mount(Comp)
@@ -36,7 +36,7 @@ export function tryOnScopeDispose(fn: Fn) {
 }
 
 export function promiseTimeout(ms: number): Promise<void> {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(resolve, ms)
   })
 }
