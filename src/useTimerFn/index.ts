@@ -7,7 +7,7 @@ export function useTimerFn(
   immediate?: boolean
 ): { trigger: Ref<boolean> } {
   const trigger = ref(true)
-  let timer: any = null
+  let timer: NodeJS.Timer
 
   immediate && cb()
 
@@ -26,6 +26,6 @@ export function useTimerFn(
   })
 
   return {
-    trigger,
+    trigger
   }
 }
