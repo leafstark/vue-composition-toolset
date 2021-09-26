@@ -1,6 +1,6 @@
 {
   "name": "vue-composition-toolset",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Minimalist Design Vue Composition Utilities",
   "main": "lib/index.cjs.js",
   "types": "lib/index.d.ts",
