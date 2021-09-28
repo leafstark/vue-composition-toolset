@@ -1,13 +1,37 @@
-import { defineComponent, createApp, h } from 'vue-demi'
-import { getCurrentScope, onScopeDispose } from 'vue-demi'
-import { Fn } from './types'
+import {
+  defineComponent,
+  createApp,
+  h,
+  getCurrentScope,
+  onScopeDispose
+} from 'vue-demi'
+import { Fn, VM } from './types'
+import VueRouter from 'vue-router'
+import VueCompositionAPI from '@vue/composition-api'
 
-type InstanceType<V> = V extends { new (...arg: any[]): infer X } ? X : never
-type VM<V> = InstanceType<V> & { unmount(): void }
+export function createVueRouter() {
+  const routes = [
+    {
+      path: '/',
+      name: 'index',
+      meta: { title: 'Index' }
+    },
+    {
+      path: '/error',
+      name: 'error',
+      meta: { title: 'Error Page' }
+    }
+  ]
+  return new VueRouter({
+    routes
+  })
+}
 
 export function mount<V>(Comp: V) {
   const el = document.createElement('div')
   const app = createApp(Comp)
+  app.use(VueRouter)
+  app.use(VueCompositionAPI)
 
   // @ts-ignore
   const unmount = () => app.unmount(el)
@@ -17,11 +41,13 @@ export function mount<V>(Comp: V) {
 }
 
 export function useSetup<V>(setup: () => V) {
+  const router = createVueRouter()
   const Comp = defineComponent({
     setup,
     render() {
       return h('div', [])
-    }
+    },
+    router
   })
 
   return mount(Comp)

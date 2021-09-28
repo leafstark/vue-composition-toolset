@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "esnext",
+    "lib": ["dom", "ESNext"],
     "paths": {
       "vue-composition-toolset": ["./src/index.ts"]
     },
